@@ -14,7 +14,7 @@ public class miniraknareEnkel {
     
             if (inputUttryck.isEmpty()){
             JOptionPane.showMessageDialog(null, "Du har inte angett ett uttryck!");
-            loop=true;
+            break;
         }
 
             if(inputUttryck.indexOf("*", 0) != -1){
@@ -36,12 +36,10 @@ public class miniraknareEnkel {
             }
             else if (inputUttryck.indexOf("%")!=-1){
                 JOptionPane.showMessageDialog(null, "Modulus ej tillåtet");
-                loop=true;
                 break;
             }
             else {
                 JOptionPane.showMessageDialog(null, "Ingen korrekt operator i sikte!");
-                loop=true;
                 break;
             }
             
@@ -55,7 +53,6 @@ public class miniraknareEnkel {
             }
                 catch (NumberFormatException e){
                     JOptionPane.showMessageDialog(null, "Ej korrekt angivna tal!");
-                    loop=true;
                     break;
                 }
 
