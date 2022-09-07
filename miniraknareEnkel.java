@@ -8,13 +8,13 @@ public class miniraknareEnkel {
         double operand1 = 0;
         double operand2 = 0;
         boolean loop = true;
-        while(true){
+    
         inputUttryck = JOptionPane.showInputDialog("Skriv ett matematisk uttryck: ");
         inputUttryck = inputUttryck.trim();
     
             if (inputUttryck.isEmpty()){
             JOptionPane.showMessageDialog(null, "Du har inte angett ett uttryck!");
-            break;
+            System.exit(0);
         }
 
             if(inputUttryck.indexOf("*", 0) != -1){
@@ -32,15 +32,14 @@ public class miniraknareEnkel {
             else if (inputUttryck.indexOf("-", 1) != -1){
                 operand1String = inputUttryck.substring(0, inputUttryck.indexOf("-"));
                 operand2String = inputUttryck.substring(inputUttryck.indexOf("-")+1);
-
             }
             else if (inputUttryck.indexOf("%")!=-1){
                 JOptionPane.showMessageDialog(null, "Modulus ej tillåtet");
-                break;
+                System.exit(0);
             }
             else {
                 JOptionPane.showMessageDialog(null, "Ingen korrekt operator i sikte!");
-                break;
+                System.exit(0);
             }
             
             double tal1 =-1;
@@ -53,7 +52,7 @@ public class miniraknareEnkel {
             }
                 catch (NumberFormatException e){
                     JOptionPane.showMessageDialog(null, "Ej korrekt angivna tal!");
-                    break;
+                System.exit(0);
                 }
 
             double sum = 0;
@@ -61,27 +60,19 @@ public class miniraknareEnkel {
                 if(inputUttryck.indexOf("*", 0) != -1){
                     sum = tal1*tal2;
                     JOptionPane.showMessageDialog(null, sum);
-                    break;
                 }else if(inputUttryck.indexOf("/", 0) != -1){
                     if(tal2==0){
                         JOptionPane.showMessageDialog(null, "Får ej dela med 0!");
-                        break;
+                    System.exit(0);
                     }
                     sum = tal1/tal2;
                     JOptionPane.showMessageDialog(null, sum);
-                    break;
                 }else if(inputUttryck.indexOf("+", 0) != -1){
                     sum = tal1+tal2; 
                     JOptionPane.showMessageDialog(null, sum);
-                    break;
                 }else if(inputUttryck.indexOf("-", 1) != -1){
                     sum = tal1-tal2;
                     JOptionPane.showMessageDialog(null, sum);
-                    break;
-                }else{
-                JOptionPane.showMessageDialog(null, "De tal du angav är ogiltiga!");
-                loop=true;
-            }
+                }
         }
-    }
     }
