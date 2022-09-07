@@ -7,7 +7,6 @@ public class miniraknareEnkel {
         String operator = "tom";
         double operand1 = 0;
         double operand2 = 0;
-        boolean loop = true;
     
         inputUttryck = JOptionPane.showInputDialog("Skriv ett matematisk uttryck: ");
         inputUttryck = inputUttryck.trim();
