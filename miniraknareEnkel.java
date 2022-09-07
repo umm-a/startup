@@ -4,7 +4,6 @@ public class miniraknareEnkel {
         String inputUttryck = "tom";
         String operand1String = "tom";
         String operand2String = "tom";
-        String operator = "tom";
         double operand1 = 0;
         double operand2 = 0;
     
