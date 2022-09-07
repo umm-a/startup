@@ -26,14 +26,13 @@ public class miniraknareEnkel {
             else if (inputUttryck.indexOf("+", 0) != -1){
                 operand1String = inputUttryck.substring(0, inputUttryck.indexOf("+"));
                 operand2String = inputUttryck.substring(inputUttryck.indexOf("+")+1);
-            }
-            else if (inputUttryck.indexOf("-", 1) != -1){
-                operand1String = inputUttryck.substring(0, inputUttryck.indexOf("-"));
-                operand2String = inputUttryck.substring(inputUttryck.indexOf("-")+1);
-            }
-            else if (inputUttryck.indexOf("%")!=-1){
+            }else if (inputUttryck.indexOf("%")!=-1){
                 JOptionPane.showMessageDialog(null, "Modulus ej tillåtet");
                 System.exit(0);
+            else if (inputUttryck.indexOf("-", 1) != -1){
+                operand1String = inputUttryck.substring(0, inputUttryck.indexOf("-", 1));
+                operand2String = inputUttryck.substring(inputUttryck.indexOf("-", 1)+1);
+            }
             }
             else {
                 JOptionPane.showMessageDialog(null, "Ingen korrekt operator i sikte!");
